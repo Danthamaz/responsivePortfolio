@@ -1,0 +1,285 @@
+/* Initial CSS */
+ * {
+    box-sizing: border-box; /* Update all box sizing to border-box */
+ }
+ body {
+    font-family: Arial, Helvetica, sans-serif; /* Updates font to Arial first */
+    color: #777777;
+    margin: 0; /* Removes default margins */
+    background-image: url("../Images/textured_paper.png"); /* Background image */
+ }
+
+/* Header Style */
+    header h1 {
+        color: white; /* White text */
+        background: #4aaaa5; /* Background for h1 text */
+        margin-bottom: -1px; /* Brings text to bottom of header */
+        margin-left: 3px; /* Pushes header right to align with section */
+        padding: 15px 30px; /* Padding around header (teal box) */
+        font-size: 130%; /* font size for my name */
+    }
+    .header {
+        background: #ffffff; /* Makes header background white */
+        border-style: solid; /* Adds a solid border style for line underneath */
+        border-width: 0px 0px 2px 0px; /* Border line under header */
+        border-color: #cccccc; /* Color of border */
+        font-family: Georgia, 'Times New Roman', Times, serif; /* Changes font for headings */
+    }
+    .nav {
+        display: flex; /* I have no idea why but it worked */
+        margin: auto; /* To center header & nav */
+        width: 60%;   /* To center header & nav */
+        white-space: nowrap; /* Makes name text appear only on one line */
+    }
+
+/* Navigation Bar Style */
+    header ul {
+        overflow: hidden; /* Hides overflow */
+        margin: auto; /* Keeps margins correct */
+        margin-bottom: 0px; /* Brings text to bottom of header */
+        width: 100%; 
+        list-style-type: none; /* Removes bullets from list */
+        text-align: right; /* Aligns text to right side of bar */
+    }
+    header ul a {
+        display: block; /* Changes the display to block to be responsive */
+        color: #777777; /* Text color for links*/
+        padding: 14px 15px; /* Adds padding around content */      
+        text-decoration: none; /* Removes hyperlink underline */
+    }
+    /* Change color on mouse over */
+    header ul a:hover {
+        background: #cccccc; /* Light gray hover color */ 
+    }
+    header li {
+        display: inline-block; /* Places links inline */
+    }
+
+/* Content Style */
+    /* Column container */
+    section {
+        display: flex;
+        flex-wrap: wrap;
+        margin: auto; /* Margin is automatically calculated to center div */
+        width: 60%; /* Section will only take up 60% of the page */  
+        margin-top: 20px; /* To seperate content from header */
+        margin-bottom: 110px; /* To ensure content does not flow into footer */
+        border-style: solid;
+        border-width: 3px;
+        border-color: #dddddd;
+    }
+
+    /* Main article */
+    article {
+        background: #ffffff; /* White background color for article */
+        padding: 10px 20px 20px 20px; /* Adds padding around content */
+        width: 100%; /* Article is 100% of the width of it's parent */
+    }
+    /* styles for 'About Me' */
+    article h1 {
+        color: #4aaaa5; /* teal text */
+        padding: 0px; /* Padding around header */
+        font-size: 175%;
+        font-family: Georgia, 'Times New Roman', Times, serif; /* Changes font for headings */
+    }
+    /* update picture rules */
+    img {
+        float: left; /* Floats image for word wrap */
+        padding: 0px 10px 0px 0px; /* Padding pushes text away from image */
+    }
+    article p {
+        padding: 0px 0px 15px 0px; /* Extra break after paragraphs */
+        margin: 0 auto; /* Keep margins small */
+        line-height: 26px;   /* Double space */ 
+    }
+    hr { /*designs for thematic break */
+        height: 2px;
+        color: #4aaaa5;
+        position: relative; 
+        z-index: 2; /* Makes borders for hover not cover line */
+    }
+    .padding {
+        padding: 25px 0px 0px 0px; /* Padding between break and content */
+    }
+/* Form for 'Contact' */
+    form {
+        display: flex;
+        flex-direction: column;
+        overflow: auto;
+        width: 100%;
+    }
+    /* Submit Button */
+    #submit {
+        display: block;
+        width: 20%;
+        min-height: 35px;
+        background: #4aaaa5;
+        color: #ffffff;
+        padding: 5px 10px;
+    }
+    /* Message form size */
+    textarea {
+        resize: none;
+        height: 200px;
+    }
+    input {
+        height: 30px;
+    }
+
+    /* Changes photos based on screen size */
+    .imageF  ull{
+        display:block;
+    }
+    .imageMobile{
+        display:none;
+    }
+
+/* Portfolio Style */
+
+  
+.responsive:hover {  /* Style for hovering images */
+    opacity: 0.75; /* Image fades out from mouse hover */
+}
+
+.responsive img {
+    width: 100%;
+    padding: 15px; /* resets padding (previously modified by img) */
+}
+
+.responsive { /* makes photos shrink with webpage size */ 
+    float: left;
+    width: 33.31%;
+    position: relative;
+}
+
+.clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+
+/* Responsive layout - when the screen is less than 700px wide, make things pretty */
+    @media screen and (max-width: 980px) {
+        section { 
+            width: 60%; /* Makes the section take up entire page on small devices */
+            flex-direction: column;
+            margin-left: 2px;
+        }
+        .nav {
+            width: 100%; /* Makes link bars stretch on small screens */
+            white-space: normal;
+        }
+        header h1 {
+            width: 60%;
+        }
+        body {
+            font-size: 200%;
+        }
+        form {
+            height: 100%;
+        }
+        input {
+            height: 50px;
+        }
+        .responsive { /* Changes image order for Portfolio */
+            width: 49.99999%;
+            margin: 6px 0;
+        }
+        footer p { /* Footer text changes size & moves for mobile */
+            position: relative;
+            bottom: 8px;
+            font-size: 60%;
+        }
+    }
+    @media screen and (max-width: 768px) {
+        section { 
+            width: 100%; /* Makes the section take up entire page on small devices */
+            flex-direction: column;
+        }
+        .nav {
+            width: 100%; /* Makes link bars stretch on small screens */
+            white-space: normal;
+        }
+        header h1 {
+            width: 60%;
+        }
+        body {
+            font-size: 200%;
+        }
+        form {
+            height: 100%;
+        }
+        input {
+            height: 50px;
+        }
+        .responsive { /* Changes image order for Portfolio */
+            width: 49.99999%;
+            margin: 6px 0;
+        }
+        footer p { /* Footer text changes size & moves for mobile */
+            position: relative;
+            bottom: 8px;
+            font-size: 60%;
+        }
+    }
+    @media screen and (max-width: 640px) {
+        section { 
+            width: 100%; /* Makes the section take up entire page on small devices */
+            flex-direction: column;
+        }
+        .nav {
+            width: 100%; /* Makes link bars stretch on small screens */
+            white-space: normal;
+            display: inline-block;
+            text-align: center;
+        }
+        .nav li {
+            display: inline-block;
+            right: 20px;
+            padding: 0px 50px 0px 0px;
+        }
+        header h1 {
+            width: 100%;
+            margin: 0;
+        }
+        body {
+            font-size: 200%;
+        }
+        form {
+            height: 100%;
+        }
+        input {
+            height: 50px;
+        }
+        .responsive { /* Changes image order for Portfolio */
+            width: 100%;
+            margin: 6px 0;
+        }
+        footer p { /* Footer text changes size & moves for mobile */
+            position: relative;
+            bottom: 8px;
+            font-size: 60%;
+        }
+    }
+
+.imageText {
+    text-align: center;
+    border: solid 2px;
+}
+
+/* Footer Style */
+    footer {
+        padding: 10px; /* Adds padding around content */
+        text-align: center; /* Centers text */
+        background: #666666 ; /* Brown background */
+        color: white; /* Text color */     
+        position: fixed; /* Fixes the footer to a specified location */
+        left: 0;
+        bottom: 0; /* Specifies fixed locaiton, along with left 0; */
+        width: 100%; /* Allows footer to always be 100% of the width */  
+        max-height: 70px; /* Works with margin-bottom: 110px; on section */
+        border-style: solid; /* Adds a solid border */
+        border-width: 5px 0px 0px 0px; /* Places border only on top */
+        border-color: #4aaaa5;  
+    }
